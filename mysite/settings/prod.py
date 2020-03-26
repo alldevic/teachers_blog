@@ -1,7 +1,5 @@
 from .base import *
 
-DEBUG = False
-SECRET_KEY = 'pb&e*sg4!9hdb@x=w4_gof(5ye40!w5gmi$x5f=nt++74#0env'
 ALLOWED_HOSTS = ['teachers.stdfo.ru']
 EMAIL_BACKEND = 'django_sendmail_backend.backends.EmailBackend'
 DEFAULT_FROM_EMAIL = 'Дистанционное образование <info@teachers.stdfo.ru>'
@@ -16,19 +14,6 @@ MANAGERS = ADMINS
 
 # Email address used to send error messages to ADMINS.
 SERVER_EMAIL = DEFAULT_FROM_EMAIL
-
-# DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.mysql',
-#        'HOST': 'localhost',
-#        'NAME': 'mysite',
-#        'USER': 'mysite',
-#        'PASSWORD': '',
-#        # If using SSL to connect to a cloud mysql database,
-#        #   spedify the CA as so.
-#        'OPTIONS': { 'ssl': { 'ca': '/path/to/certificate-authority.pem' } },
-#    }
-# }
 
 # Use template caching to speed up wagtail admin and front-end.
 # Requires reloading web server to pick up template changes.

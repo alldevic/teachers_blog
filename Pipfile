@@ -6,9 +6,11 @@ verify_ssl = true
 [packages]
 coderedcms = "==0.17.0"
 django_sendmail_backend = "==0.1.2"
+django-sass = "==1.0.0"
+django-environ = "==0.4.5"
+psycopg2-binary = "==2.8.4"
 
 [dev-packages]
-django-sass = "*"
 mypy = "*"
 autopep8 = "*"
 flake8 = "*"

@@ -144,14 +144,20 @@ protected/
 
 # if you want to store original uploaded media files in version control,
 # replace "media/" with "media/images/"
-media/
+# media/
 #media/images/
 
 # Sass generated
 website/static/website/css/*
 
+static/*
+media/*
+
+!**/.gitkeep
 # Local development
 
-.mypy_cache\
-.pytest_cache\
-.vscode
+# VS Code
+.vscode/*
+!.vscode/launch.json
+.mypy_cache/
+.pytest_cache/

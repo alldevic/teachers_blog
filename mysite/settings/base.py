@@ -1,8 +1,15 @@
 import os
+import environ
+
+env = environ.Env()
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
 
+SECRET_KEY = env.str('SECRET_KEY',
+                     '(ptk)!7t@*=6132#k8zl(3c4jr54$61tx%7n!jcmd#821^8evr')
+
+DEBUG = env.bool('DEBUG', True)
 
 INSTALLED_APPS = [
     # This project
@@ -16,6 +23,7 @@ INSTALLED_APPS = [
     'wagtailfontawesome',
     'wagtailcache',
     'wagtailimportexport',
+    'django_sass',
 
     # Wagtail
     'wagtail.contrib.forms',
@@ -93,8 +101,12 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': env.str('POSTGRES_DB', 'postgres_db'),
+        'USER': env.str('POSTGRES_USER', 'postgresuser'),
+        'PASSWORD': env.str('POSTGRES_PASSWORD', 'mysecretpass'),
+        'HOST': env.str('POSTGRES_HOST', 'localhost'),
+        'PORT': 5432
     }
 }
 

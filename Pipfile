@@ -5,13 +5,16 @@ verify_ssl = true
 
 [packages]
 coderedcms = "==0.17.0"
+django_sendmail_backend = "==0.1.2"
 
 [dev-packages]
+django-sass = "*"
 mypy = "*"
 autopep8 = "*"
 flake8 = "*"
 rope = "*"
 ptvsd = "*"
+pytest = "*"
 
 [requires]
 python_version = "3.8"

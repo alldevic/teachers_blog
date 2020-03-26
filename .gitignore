@@ -128,5 +128,30 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+
+#######################################
+### CodeRed CMS
+#######################################
+
+
+#### CodeRed CMS defaults ###
+
+# Cache
+cache/
+
+# File uploads from forms
+protected/
+
+# if you want to store original uploaded media files in version control,
+# replace "media/" with "media/images/"
+media/
+#media/images/
+
+# Sass generated
+website/static/website/css/*
+
+# Local development
+
 .mypy_cache\
 .pytest_cache\
+.vscode

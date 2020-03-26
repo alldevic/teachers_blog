@@ -2,8 +2,8 @@ name: clrn prod
 
 on:
   push:
-    branches:
-      - master
+    tags:  
+      - v*
   
 jobs:
   deploy:

@@ -45,10 +45,22 @@ services:
     depends_on:
       - backend
       - postgres
+      - redis
     working_dir: /app/
     networks:
       private_network:
         ipv4_address: 172.24.0.7
+
+  redis:
+    container_name: tb_redis
+    image: redis:5.0.8-alpine
+    depends_on:
+      - backend
+    volumes:
+      - tb_redis_data:/data
+    networks:
+      private_network:
+        ipv4_address: 172.24.0.10
 
 networks:
   private_network:
@@ -61,4 +73,6 @@ volumes:
   tb_db_data:
     external: True
   tb_media:
+    external: True
+  tb_redis_data:
     external: True

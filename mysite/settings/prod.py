@@ -38,14 +38,19 @@ TEMPLATES = [
     },
 ]
 
+WAGTAIL_CACHE = True
 CACHES = {
     'default': {
-        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
-        'LOCATION': os.path.join(BASE_DIR, 'cache'),
-        'KEY_PREFIX': 'coderedcms',
-        'TIMEOUT': 14400,  # in seconds
+        'BACKEND': 'django_redis.cache.RedisCache',
+        'LOCATION': 'redis://172.24.0.10:6379/0',
+        'OPTIONS': {
+            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+        }
     }
 }
+
+SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+SESSION_CACHE_ALIAS = "default"
 
 try:
     from .local_settings import *
